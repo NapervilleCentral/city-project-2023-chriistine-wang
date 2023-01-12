@@ -10,6 +10,7 @@ import java.awt.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
+// animation needs runnable
 public class Floor extends JComponent implements Runnable
 {
     // instance variables - replace the example below with your own
@@ -20,14 +21,14 @@ public class Floor extends JComponent implements Runnable
      */
     public Floor()
     {
-        x = 50;
-        y = 125;
+        x = 10;
+        y = 10;
         w = 250;
-        h = 50;
+        h = 250;
     }
 
     @Override
-    public void paintComponent(Graphics g)
+    public void paintComponent(Graphics g) //required
     {
         Graphics2D g2 = (Graphics2D) g;
         
@@ -67,7 +68,8 @@ public class Floor extends JComponent implements Runnable
        public void draw (Graphics2D page)
        {
           page.setColor(Color.black);
-          page.fillRect(x, y, w, h);
+          page.fillRect(x, y, w, h); //rectangle
+          
        }
        
     public void run()

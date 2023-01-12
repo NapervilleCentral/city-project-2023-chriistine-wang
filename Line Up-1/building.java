@@ -1,18 +1,10 @@
-/********************************************************************
-This is my city that holds the buildings, cars, etc
-draws it, refreshes it
+import java.awt.*;
+import java.util.*;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import javax.swing.JComponent;
 
-// a component of the frame
-********************************************************************/
-
-    import java.awt.*;
-    import java.util.*;
-
-    import java.awt.Graphics;
-    import java.awt.Graphics2D;
-    import javax.swing.JComponent;
-
-public class LineUp extends JComponent //implements Runnable
+public class building extends JComponent //implements Runnable
 {
    // sets stick figure dimensions
    private final int HEIGHT_MIN = 100;
@@ -32,7 +24,7 @@ public class LineUp extends JComponent //implements Runnable
    //-----------------------------------------------------------------
    //  Creates constructor for several stick figures with varying characteristics.
    //-----------------------------------------------------------------
-   public LineUp () //init in applet is like constructor; runs only once
+   public building () //init in applet is like constructor; runs only once
    {                   //Different than start.
       int h1,h2,h3,h4;  // heights of stick figures
 

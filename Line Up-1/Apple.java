@@ -6,6 +6,7 @@
  * @version (a version number or a date)
  */
 import java.util.*;
+// runnable has req methods
 public class Apple implements Runnable
 {
     // instance variables - replace the example below with your own
@@ -33,7 +34,7 @@ public class Apple implements Runnable
     {
         try{
             System.out.printf("%s is sleeping for %d\n",name,time);
-            Thread.sleep(time);
+            Thread.sleep(time); // in millisec. 1000 = 1 sec
             System.out.printf("%s is done\n",name);
         }catch (Exception e){}
   

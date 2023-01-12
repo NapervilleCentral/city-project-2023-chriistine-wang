@@ -4,30 +4,32 @@ import java.awt.*;
 /**
  * Class that contains the main method for the program and creates the frame containing the component.
  * 
- * @author gcschmit
- * @version 18 July 2014
+ * @author Christine Wang
+ * @version Jan 12 2023
  */
-public class CityscapeViewer
+
+public class CyberpunkViewer
 {
-    // the cityscape will be animated for x seconds
     static final int ANIMATION_TIME_IN_SECONDS = 80;
-   
-    /**
+
+    /*
      * main method for the program which creates and configures the frame for the program
      * 
      * @param args  not used
      *
      */
+    
     public static void main(String[] args) throws InterruptedException
     {
         // create and configure the frame (window) for the program
         JFrame frame = new JFrame();
         //frame is container, holds component. 
         
+        Color darkBlue = new Color(200, 50, 250);
         // sets size
-        frame.setSize(600 /* x */, 300 /* y */); // sets width, height,xy
-        frame.setTitle("Cityscape");
-        frame.setBackground(Color.red);
+        frame.setSize(1000 /* x */, 600 /* y */); // sets width, height,xy
+        frame.setTitle("City");
+        frame.setBackground(darkBlue);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         //changes component
@@ -38,10 +40,9 @@ public class CityscapeViewer
         //CityscapeComponent component = new CityscapeComponent();
         
         
-        LineUp row = new LineUp();
+        building tower = new building();
         //frame.add(component);
-        frame.add(row);
-        
+        frame.add(tower);
         
         // make the frame visible which will result in the paintComponent method being invoked on the
         //  component.
@@ -50,12 +51,10 @@ public class CityscapeViewer
         // animate the cityscape
         for( int seconds = 0; seconds < ANIMATION_TIME_IN_SECONDS; seconds++ )
         {
-            row.nextFrame(); //refreshes it
+            tower.nextFrame(); //refreshes it
             //may need to adj to make city look better
-            Thread.sleep( 100 ); // pauses it, tells the thread to wait, milisec.
+            Thread.sleep(84); // pauses it, tells the thread to wait, milisec.
             // calls the frame every sleep interval. changes framerate
         }
-        
     }
-
 }
