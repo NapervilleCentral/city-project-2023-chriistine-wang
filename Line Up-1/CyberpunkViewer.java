@@ -40,9 +40,9 @@ public class CyberpunkViewer
         //CityscapeComponent component = new CityscapeComponent();
         
         
-        building tower = new building();
+        foreground lineup = new foreground();
         //frame.add(component);
-        frame.add(tower);
+        frame.add(lineup);
         
         // make the frame visible which will result in the paintComponent method being invoked on the
         //  component.
@@ -51,7 +51,7 @@ public class CyberpunkViewer
         // animate the cityscape
         for( int seconds = 0; seconds < ANIMATION_TIME_IN_SECONDS; seconds++ )
         {
-            tower.nextFrame(); //refreshes it
+            lineup.nextFrame(); //refreshes it
             //may need to adj to make city look better
             Thread.sleep(84); // pauses it, tells the thread to wait, milisec.
             // calls the frame every sleep interval. changes framerate
