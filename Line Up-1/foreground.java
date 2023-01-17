@@ -7,7 +7,7 @@ import javax.swing.JComponent;
 public class foreground extends JComponent //implements Runnable
 {
    // sets stick figure dimensions
-   private final int HEIGHT_MIN = 100;
+   private final int HEIGHT_MIN = 275;
    private final int VARIANCE = 25; // height and width diff between buildings
    private building tower; //defines so everyone can use it at class lvl
    Random generator = new Random();
@@ -15,7 +15,8 @@ public class foreground extends JComponent //implements Runnable
        
    //private StickFigure2 figure1 = new StickFigure2(100,150,Color.red,120);
    private building tower1,tower2,tower3,tower4,tower5,tower6,tower7,tower8;
-   private Floor ground;
+   private lake lake1;
+   private subway train;
    private int running = 0;
 
    //-----------------------------------------------------------------
@@ -33,10 +34,14 @@ public class foreground extends JComponent //implements Runnable
       // 0,0 starts top L. bigger y val, goes down graph.
       // +x moves obj right, +y moves obj down
       //                      x1   x2  y1    y2
-      tower1 = new building (100, 150, 200, h1, new Color(200, 200, 200));
-      tower2 = new building (300, 350, 200, h2, new Color(200, 40, 40));
-      ground = new Floor();
-     
+      
+      // x1+ moves object right, x2+ moves object down from top. y2-  moves object up from bottom
+      Color gray = new Color(36, 36, 69);
+      tower1 = new building (100, 50, 325, h1, new Color (200, 200, 200));
+      tower2 = new building (300, 50, 325, h2, new Color(200, 40, 40));
+      tower3 = new building (800, 50, 325, h3, gray);
+      lake1 = new lake();
+      train = new subway();
       //animates it
       //Thread t1 = new Thread(ground);
       //t1.start();
@@ -67,9 +72,12 @@ public class foreground extends JComponent //implements Runnable
        
       // order you put drawings determines layers.
       // static
-      ground.draw(page); // ground first, so it will be in very back
+      // ground first, so it will be in very back
       tower1.draw (page);
       tower2.draw (page);
+      tower3.draw (page);
+      lake1.draw(page); 
+      train.draw(page);
 
       //ground.draw(page);
 

@@ -10,20 +10,20 @@ public class building extends JComponent implements Runnable
 {
     private Color myColor;
        
-    private int x1, x2, y1, y2;
+    private int x, y, w, h;
     
     /**
          * Constructor for objects of class building
          * sets up building's primary attributes
          */
-        public building(int x1, int x2,int y1, int y2, Color userColor)
+        public building(int x, int y, int width, int height, Color userColor)
         {
             // initialise instance variables
             myColor = userColor;
-            this.x1 = x1;
-            this.x2 = x2;
-            this.y1 = y1;
-            this.y2 = y2;
+            this.x = x;
+            this.y = y;
+            this.w = width;
+            this.h = height;
         }
     /**
      * a required component
@@ -41,7 +41,7 @@ public class building extends JComponent implements Runnable
     public void draw(Graphics2D page)
     {
         page.setColor(myColor);
-        page.fillRect(x1, x2, y1, y2);
+        page.fillRect(x, y, w, h);
     }
     public void run()
     {

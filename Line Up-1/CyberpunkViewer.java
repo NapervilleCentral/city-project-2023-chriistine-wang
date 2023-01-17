@@ -25,11 +25,11 @@ public class CyberpunkViewer
         JFrame frame = new JFrame();
         //frame is container, holds component. 
         
-        Color darkBlue = new Color(200, 50, 250);
+        Color red = new Color(200, 2, 0);
         // sets size
         frame.setSize(1000 /* x */, 600 /* y */); // sets width, height,xy
         frame.setTitle("City");
-        frame.setBackground(darkBlue);
+        frame.setBackground(red);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         //changes component

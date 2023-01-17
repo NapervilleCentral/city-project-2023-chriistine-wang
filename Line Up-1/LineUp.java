@@ -26,7 +26,6 @@ public class LineUp extends JComponent //implements Runnable
    
    //private StickFigure2 figure1 = new StickFigure2(100,150,Color.red,120);
    private StickFigure figure1,figure2, figure3, figure4;
-   private Floor ground;
    private int running = 0;
 
    //-----------------------------------------------------------------
@@ -51,8 +50,6 @@ public class LineUp extends JComponent //implements Runnable
       figure4 = new StickFigure(250, 150, Color.yellow, h4);
       
       myImage = new window(45, 10, new Color(200, 200, 200));
-
-      ground = new Floor();
      
       //animates it
       //Thread t1 = new Thread(ground);
@@ -83,7 +80,7 @@ public class LineUp extends JComponent //implements Runnable
        
       // order you put drawings determines layers.
       // static
-      ground.draw(page); // ground first, so it will be in very back
+      // ground first, so it will be in very back
       figure1.draw (page);
       figure2.draw (page);
       figure3.draw (page);
