@@ -1,8 +1,9 @@
 import java.awt.*;
-import java.util.*;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import javax.swing.JComponent;
+    import java.util.*;
+    
+    import java.awt.Graphics;
+    import java.awt.Graphics2D;
+    import javax.swing.JComponent;
 /**
  * Write a description of class Floor here.
  * 
@@ -10,21 +11,21 @@ import javax.swing.JComponent;
  * @version (a version number or a date)
  */
 // animation needs runnable
-public class subway extends JComponent implements Runnable
+public class sky extends JComponent implements Runnable
 {
     // instance variables - replace the example below with your own
     private int x,y,w,h;
-    private Color gray = new Color(100, 100, 110);
+    private Color blue = new Color(36, 56, 110);
 
     /**
      * Constructor for objects of class Floor
      */
-    public subway()
+    public sky()
     {
         x = 0;
-        y = 325;
+        y = 0;
         w = 1000;
-        h = 75;
+        h = 600;
     }
 
     @Override
@@ -67,7 +68,7 @@ public class subway extends JComponent implements Runnable
        //-----------------------------------------------------------------
        public void draw (Graphics2D page)
        {
-          page.setColor(gray);
+          page.setColor(blue);
           page.fillRect(x, y, w, h); //rectangle
           
        }

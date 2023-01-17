@@ -9,14 +9,14 @@ public class foreground extends JComponent //implements Runnable
    // sets stick figure dimensions
    private final int HEIGHT_MIN = 275;
    private final int VARIANCE = 25; // height and width diff between buildings
-   private building tower; //defines so everyone can use it at class lvl
    Random generator = new Random();
    //Graphics page;
        
    //private StickFigure2 figure1 = new StickFigure2(100,150,Color.red,120);
    private building tower1,tower2,tower3,tower4,tower5,tower6,tower7,tower8;
    private lake lake1;
-   private subway train;
+   private sky background;
+   private subway subway1;
    private int running = 0;
 
    //-----------------------------------------------------------------
@@ -41,7 +41,8 @@ public class foreground extends JComponent //implements Runnable
       tower2 = new building (300, 50, 325, h2, new Color(200, 40, 40));
       tower3 = new building (800, 50, 325, h3, gray);
       lake1 = new lake();
-      train = new subway();
+      subway1 = new subway();
+      background = new sky();
       //animates it
       //Thread t1 = new Thread(ground);
       //t1.start();
@@ -73,11 +74,12 @@ public class foreground extends JComponent //implements Runnable
       // order you put drawings determines layers.
       // static
       // ground first, so it will be in very back
+      background.draw(page);
       tower1.draw (page);
       tower2.draw (page);
       tower3.draw (page);
       lake1.draw(page); 
-      train.draw(page);
+      subway1.draw(page);
 
       //ground.draw(page);
 

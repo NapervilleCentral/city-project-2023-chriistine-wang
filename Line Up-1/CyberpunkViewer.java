@@ -30,6 +30,7 @@ public class CyberpunkViewer
         frame.setSize(1000 /* x */, 600 /* y */); // sets width, height,xy
         frame.setTitle("City");
         frame.setBackground(red);
+        frame.setResizable(false); // locks the size of frame
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         //changes component
