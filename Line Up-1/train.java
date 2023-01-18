@@ -28,8 +28,8 @@ public class train extends JComponent implements Runnable
      */
     public train()
     {
-        x = 100;
-        y = 100;
+        x = 0;
+        y = 325;
         try 
         {
             trainCar = ImageIO.read(new File("trainCar.PNG"));
@@ -39,35 +39,36 @@ public class train extends JComponent implements Runnable
     }
     public void draw (Graphics2D page)
     {
-        page.drawImage(trainCar, 0, 325, null);
+        page.drawImage(trainCar, x, y, null);
         
     }
-    
-    /* public void run()
+    /*
+    public void nextFrame()
     {
-        int moving = 0;
-        while (true)
-        {
-            if running 
-        }
+        x += 20;
+        repaint();
     }
     */
    
    public void run()
    {
        while(true)
-       { 
-            if(running % 2 == 0)
-                x +=20;
-            else
-                x -= 20;
-            running ++;
-                try{
+       {
+            //int newX = 100 + generator.nextInt(45);
+            //x = newX;
+            
+            
+            x += 10;
+            if (x > 1300)
+                x = -1;
+            try
+            {
                 Thread.sleep(17);
-            }catch (Exception e){}
+            }
+            catch (Exception e){}
             
             System.out.print(x+"-----------------");
-            //repaint();
+            
         }
     }
     

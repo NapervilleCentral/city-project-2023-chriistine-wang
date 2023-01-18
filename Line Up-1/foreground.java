@@ -38,9 +38,9 @@ public class foreground extends JComponent //implements Runnable
       
       // x1+ moves object right, x2+ moves object down from top. y2-  moves object up from bottom
       Color gray = new Color(36, 36, 69);
-      tower1 = new building (100, 50, 325, h1, new Color (200, 200, 200));
-      tower2 = new building (300, 50, 325, h2, new Color(200, 40, 40));
-      tower3 = new building (800, 50, 325, h3, gray);
+      tower1 = new building (100, 75, 150, h1, new Color (200, 200, 200));
+      tower2 = new building (300, 75, 150, h2, new Color(200, 40, 40));
+      tower3 = new building (800, 75, 150, h3, gray);
       lake1 = new lake();
       subway1 = new subway();
       background = new sky();
@@ -89,8 +89,6 @@ public class foreground extends JComponent //implements Runnable
 
       //ground.draw(page);
 
-      //Thread t1 = new Thread(ground);
-      //t1.start();
       
       
       // second way to draw it
