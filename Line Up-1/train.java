@@ -15,11 +15,11 @@ import javax.swing.JComponent;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class train extends JComponent 
+public class train extends JComponent implements Runnable 
 {
     private BufferedImage trainCar;
-    private int x, y, randomGraphX, randomGraphY;
-    private int moving = 0;
+    private int x, y;
+    private int running = 0;
     
     Random generator = new Random();
     
@@ -30,16 +30,45 @@ public class train extends JComponent
     {
         x = 100;
         y = 100;
-        try {
-            trainCar = ImageIO.read(newFile("trainCar.PNG"));
+        try 
+        {
+            trainCar = ImageIO.read(new File("trainCar.PNG"));
         }
         catch (IOException e) {}
         
     }
     public void draw (Graphics2D page)
     {
-        page.drawImage(trainCar, 30, 48, null);
+        page.drawImage(trainCar, 0, 325, null);
         
+    }
+    
+    /* public void run()
+    {
+        int moving = 0;
+        while (true)
+        {
+            if running 
+        }
+    }
+    */
+   
+   public void run()
+   {
+       while(true)
+       { 
+            if(running % 2 == 0)
+                x +=20;
+            else
+                x -= 20;
+            running ++;
+                try{
+                Thread.sleep(17);
+            }catch (Exception e){}
+            
+            System.out.print(x+"-----------------");
+            //repaint();
+        }
     }
     
 }

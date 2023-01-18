@@ -27,18 +27,6 @@ public class subway extends JComponent implements Runnable
         h = 75;
     }
 
-    @Override
-    public void paintComponent(Graphics g) //required
-    {
-        Graphics2D g2 = (Graphics2D) g;
-        
-        // invoke the draw method 
-        // ...
-        draw(g2);
-        
-        
-    }
-    
     /**
      * Animate the cityscape by updating the objects such that they appear to be animated when
      *      they are next drawn.

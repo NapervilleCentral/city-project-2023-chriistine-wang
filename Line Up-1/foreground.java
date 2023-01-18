@@ -17,6 +17,7 @@ public class foreground extends JComponent //implements Runnable
    private lake lake1;
    private sky background;
    private subway subway1;
+   private train train1;
    private int running = 0;
 
    //-----------------------------------------------------------------
@@ -43,6 +44,10 @@ public class foreground extends JComponent //implements Runnable
       lake1 = new lake();
       subway1 = new subway();
       background = new sky();
+      train1 = new train();
+      
+      Thread t1 = new Thread(train1);
+      t1.start();
       //animates it
       //Thread t1 = new Thread(ground);
       //t1.start();
@@ -80,6 +85,7 @@ public class foreground extends JComponent //implements Runnable
       tower3.draw (page);
       lake1.draw(page); 
       subway1.draw(page);
+      train1.draw(page);
 
       //ground.draw(page);
 
