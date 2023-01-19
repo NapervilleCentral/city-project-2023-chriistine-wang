@@ -9,8 +9,10 @@
 public class building extends JComponent implements Runnable
 {
     private Color myColor;
+    private Color myLight;
        
     private int x, y, w, h;
+    private int width, height;
     
     /**
          * Constructor for objects of class building
@@ -24,6 +26,14 @@ public class building extends JComponent implements Runnable
             this.y = y;
             this.w = width;
             this.h = height;
+        }
+        public building (int w, int h, Color userLight)
+        {
+            myLight = userLight;
+            this.x = x;
+            this.y = y;
+            this.width = w;
+            this.height = h;
         }
     /**
      * a required component
@@ -42,6 +52,9 @@ public class building extends JComponent implements Runnable
     {
         page.setColor(myColor);
         page.fillRect(x, y, w, h);
+        
+        page.fillRect(x, y, width, height);
+
     }
     public void run()
     {

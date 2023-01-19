@@ -17,7 +17,7 @@ public class subway extends JComponent implements Runnable
     private Color gray = new Color(100, 100, 110);
 
     /**
-     * Constructor for objects of class Floor
+     * Constructor for objects of class subway
      */
     public subway()
     {
@@ -25,29 +25,6 @@ public class subway extends JComponent implements Runnable
         y = 325;
         w = 1000;
         h = 75;
-    }
-
-    /**
-     * Animate the cityscape by updating the objects such that they appear to be animated when
-     *      they are next drawn.
-     *
-     */
-    public void setX(int running)
-    {
-        // update the objects in the cityscape so they are animated
-        // ...
-        //height = 100 +generator.nextInt(45);
-        
-        if (running % 2 == 0)
-            x +=20;
-        else
-            x -= 20;
-        
-        
-        
-        // request that the Java Runtime repaints this component by invoking its paintComponent method
-        //  do not explicitly invoke the paintComponent method
-        repaint();
     }
     
        //-----------------------------------------------------------------
@@ -57,6 +34,7 @@ public class subway extends JComponent implements Runnable
        {
           page.setColor(gray);
           page.fillRect(x, y, w, h); //rectangle
+          
           
        }
        

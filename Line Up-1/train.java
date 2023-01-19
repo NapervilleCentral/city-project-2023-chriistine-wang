@@ -15,7 +15,7 @@ import javax.swing.JComponent;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class train extends JComponent implements Runnable 
+public class train extends CyberpunkViewer implements Runnable 
 {
     private BufferedImage trainCar;
     private int x, y;
@@ -42,13 +42,13 @@ public class train extends JComponent implements Runnable
         page.drawImage(trainCar, x, y, null);
         
     }
-    /*
+
     public void nextFrame()
     {
-        x += 20;
-        repaint();
+        //x += 20;
+        //repaint();
     }
-    */
+
    
    public void run()
    {
@@ -57,19 +57,18 @@ public class train extends JComponent implements Runnable
             //int newX = 100 + generator.nextInt(45);
             //x = newX;
             
-            
-            x += 10;
+            x += 5;
             if (x > 1300)
-                x = -1;
+                x = -500;
             try
             {
-                Thread.sleep(17);
+                Thread.sleep(170);
             }
             catch (Exception e){}
             
-            System.out.print(x+"-----------------");
+            System.out.print(x+"----");
             
-        }
+       }
     }
     
 }
