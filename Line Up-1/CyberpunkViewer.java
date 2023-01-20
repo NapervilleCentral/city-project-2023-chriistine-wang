@@ -10,7 +10,7 @@ import java.awt.*;
 
 public class CyberpunkViewer
 {
-    static final int ANIMATION_TIME_IN_SECONDS = 80;
+    static final int ANIMATION_TIME_IN_SECONDS = 110;
 
     /*
      * main method for the program which creates and configures the frame for the program

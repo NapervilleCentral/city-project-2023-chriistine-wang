@@ -18,7 +18,7 @@ public class sky extends JComponent implements Runnable
     private Color blue = new Color(36, 56, 110);
 
     /**
-     * Constructor for objects of class Floor
+     * Constructor for objects of class sky
      */
     public sky()
     {

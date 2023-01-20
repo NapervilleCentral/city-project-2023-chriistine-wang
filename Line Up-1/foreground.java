@@ -13,7 +13,7 @@ public class foreground extends JComponent //implements Runnable
    //Graphics page;
        
    //private StickFigure2 figure1 = new StickFigure2(100,150,Color.red,120);
-   private building tower1,tower2,tower3,tower4,tower5,tower6,tower7,tower8;
+   private building tower1,tower2,tower3,tower4,tower5,tower6,tower7,tower8, light;
    private lake lake1;
    private sky background;
    private subway subway1;
@@ -41,6 +41,7 @@ public class foreground extends JComponent //implements Runnable
       tower1 = new building (100, 75, 150, h1, new Color (200, 200, 200));
       tower2 = new building (300, 75, 150, h2, new Color(200, 40, 40));
       tower3 = new building (800, 75, 150, h3, gray);
+      light = new building (1000, 5, new Color (240, 164, 239));
       lake1 = new lake();
       subway1 = new subway();
       background = new sky();
@@ -85,6 +86,7 @@ public class foreground extends JComponent //implements Runnable
       tower3.draw (page);
       lake1.draw(page); 
       subway1.draw(page);
+      light.draw(page);
       train1.draw(page);
 
       //ground.draw(page);

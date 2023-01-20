@@ -15,7 +15,7 @@ import javax.swing.JComponent;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class train extends CyberpunkViewer implements Runnable 
+public class train implements Runnable 
 {
     private BufferedImage trainCar;
     private int x, y;
@@ -57,12 +57,12 @@ public class train extends CyberpunkViewer implements Runnable
             //int newX = 100 + generator.nextInt(45);
             //x = newX;
             
-            x += 5;
+            x += 10;
             if (x > 1300)
-                x = -500;
+                x = -1000;
             try
             {
-                Thread.sleep(170);
+                Thread.sleep(17);
             }
             catch (Exception e){}
             
