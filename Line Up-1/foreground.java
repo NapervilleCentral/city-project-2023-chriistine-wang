@@ -13,11 +13,14 @@ public class foreground extends JComponent //implements Runnable
    //Graphics page;
        
    //private StickFigure2 figure1 = new StickFigure2(100,150,Color.red,120);
-   private building tower1,tower2,tower3,tower4,tower5,tower6,tower7,tower8, light;
+   private building tower1,tower2,tower3,tower4,tower5,tower6,tower7,tower8;
    private lake lake1;
    private sky background;
-   private subway subway1;
+   private subway subway1, lightStrip;
    private train train1;
+   private vehicle car;
+   private rain raining;
+   
    private int running = 0;
 
    //-----------------------------------------------------------------
@@ -41,14 +44,21 @@ public class foreground extends JComponent //implements Runnable
       tower1 = new building (100, 75, 150, h1, new Color (200, 200, 200));
       tower2 = new building (300, 75, 150, h2, new Color(200, 40, 40));
       tower3 = new building (800, 75, 150, h3, gray);
-      light = new building (1000, 5, new Color (240, 164, 239));
+      lightStrip = new subway (1000, 5, new Color (240, 164, 239));
       lake1 = new lake();
       subway1 = new subway();
       background = new sky();
       train1 = new train();
+      raining = new rain(20, 0, 30, 60, new Color(242, 205, 245));
       
       Thread t1 = new Thread(train1);
       t1.start();
+      
+      Thread t2 = new Thread(tower1);
+      t2.start();
+      
+      Thread t3 = new Thread(raining);
+      t3.start();
       //animates it
       //Thread t1 = new Thread(ground);
       //t1.start();
@@ -86,8 +96,10 @@ public class foreground extends JComponent //implements Runnable
       tower3.draw (page);
       lake1.draw(page); 
       subway1.draw(page);
-      light.draw(page);
+      lightStrip.draw(page);
       train1.draw(page);
+      //car.draw(page);
+      raining.draw(page);
 
       //ground.draw(page);
 

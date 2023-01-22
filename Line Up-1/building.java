@@ -9,8 +9,7 @@
 public class building extends JComponent implements Runnable
 {
     private Color myColor;
-    private Color myLight;
-       
+    private Color lightColor = new Color(149,227,243); 
     private int x, y, w, h;
     private int width, height;
     
@@ -27,14 +26,13 @@ public class building extends JComponent implements Runnable
             this.w = width;
             this.h = height;
         }
-        public building (int w, int h, Color userLight)
-        {
-            myLight = userLight;
-            this.x = 0;
-            this.y = 325;
-            this.width = w;
-            this.height = h;
-        }
+    public building (int w, int h)
+    {
+        this.x = 0;
+        this.y = 325;
+        this.width = w;            
+        this.height = h;
+    }
     /**
      * a required component
      */
@@ -52,9 +50,18 @@ public class building extends JComponent implements Runnable
     {
         page.setColor(myColor);
         page.fillRect(x, y, w, h);
-        
-        page.setColor(myLight);
-        page.fillRect(x, y, width, height);
+        for (int i = 10; i < w; i += 20)
+        {
+            System.out.println(i+"?" +w);
+            page.setColor(lightColor);
+            page.fillRect(x+i,y,10,15);
+            for (int j = 10; j < h; j+= 20)
+            {
+                System.out.println(y+j + " -" +h);
+                page.setColor(lightColor);
+                page.fillRect(x+i,y+j,10,15);
+            }
+        }
 
     }
     public void run()
@@ -62,13 +69,17 @@ public class building extends JComponent implements Runnable
         int running = 0;
             while(true)
             {
-                if (running %2 == 0)
-                    myColor = new Color(200, 200, 200);
+                running += 50;
+                if (running % 2 == 0 && running > 500)
+                {
+                    lightColor = new Color(207, 229, 214);
+                    lightColor = new Color(143, 216, 232);
+                }
                 else
-                    myColor = Color.yellow;
+                    lightColor = Color.white;
                 
                 try{
-                    Thread.sleep(17);
+                    Thread.sleep(20);
                 }catch (Exception e){}
                 System.out.println(myColor);
                 running++;
