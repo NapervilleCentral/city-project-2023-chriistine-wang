@@ -10,6 +10,11 @@ public class foreground extends JComponent //implements Runnable
    private final int HEIGHT_MIN = 275;
    private final int VARIANCE = 25; // height and width diff between buildings
    Random generator = new Random();
+   private Color gray = new Color(36, 36, 69);
+   private Color lapis = new Color(57,95,166);
+   private Color ultramarine = new Color(61,54,99);
+   private Color purple = new Color(71, 37, 96);
+   private Color magenta = new Color(118,48,131);
    //Graphics page;
        
    //private StickFigure2 figure1 = new StickFigure2(100,150,Color.red,120);
@@ -28,47 +33,50 @@ public class foreground extends JComponent //implements Runnable
    //-----------------------------------------------------------------
    public foreground () //init in applet is like constructor; runs only once
    {                   //Different than start.
-      int h1,h2,h3,h4;  // heights of stick figures
-
-      h1 = HEIGHT_MIN + generator.nextInt(VARIANCE);
-      h2 = HEIGHT_MIN + generator.nextInt(VARIANCE);
-      h3 = HEIGHT_MIN + generator.nextInt(VARIANCE);
-      h4 = HEIGHT_MIN + generator.nextInt(VARIANCE);
 
       // 0,0 starts top L. bigger y val, goes down graph.
       // +x moves obj right, +y moves obj down
       //                      x1   x2  y1    y2
       
       // x1+ moves object right, x2+ moves object down from top. y2-  moves object up from bottom
-      Color gray = new Color(36, 36, 69);
-      tower1 = new building (100, 75, 150, h1, new Color (200, 200, 200));
-      tower2 = new building (300, 75, 150, h2, new Color(200, 40, 40));
-      tower3 = new building (800, 75, 150, h3, gray);
+      tower1 = new building (100, 75, 150, 300, lapis);
+      tower2 = new building (300, 75, 150, 300, purple);
+      tower3 = new building (850, 10, 40, 300, gray);
+      tower4 = new building (300, 25, 100, 300, magenta);
+      tower5 = new building (460, 50, 120, 300, purple);
+      tower6 = new building (620, 15, 70, 300, lapis);
+      tower7 = new building (690, 20, 100, 300, ultramarine);
+      tower8 = new building (790, 75, 50, 300, gray);
+      
       lightStrip = new subway (1000, 5, new Color (240, 164, 239));
       lake1 = new lake();
       subway1 = new subway();
       background = new sky();
       train1 = new train();
-      raining = new rain(20, 0, 30, 60, new Color(242, 205, 245));
+      //raining = new rain(20, 0, 30, 60, new Color(242, 205, 245));
       
       Thread t1 = new Thread(train1);
       t1.start();
-      
+      /**
       Thread t2 = new Thread(tower1);
       t2.start();
-      
-      Thread t3 = new Thread(raining);
+      Thread t3 = new Thread(tower2);
       t3.start();
-      //animates it
-      //Thread t1 = new Thread(ground);
-      //t1.start();
-      /*
-      Thread t2 = new Thread(figure2);
-      t2.start();
-      Thread t3 = new Thread(figure3);
-      t3.start();
-      Thread t4 = new Thread(myImage);
+      Thread t4 = new Thread(tower3);
       t4.start();
+      Thread t5 = new Thread(tower4);
+      t5.start();
+      Thread t6 = new Thread(tower5);
+      t6.start();
+      Thread t7 = new Thread(tower6);
+      t7.start();
+      Thread t8 = new Thread(tower7);
+      t8.start();
+      Thread t9 = new Thread(tower8);
+      t9.start();
+      
+      Thread t10 = new Thread(raining);
+      t10.start();
       */
       //setBackground (Color.black); //sets the color of background
       //setSize (APPLET_WIDTH, APPLET_HEIGHT); //Sets up applet window
@@ -94,12 +102,18 @@ public class foreground extends JComponent //implements Runnable
       tower1.draw (page);
       tower2.draw (page);
       tower3.draw (page);
+      tower4.draw (page);
+      tower5.draw (page);
+      tower6.draw (page);
+      tower7.draw (page);
+      tower8.draw (page);
+      
       lake1.draw(page); 
       subway1.draw(page);
       lightStrip.draw(page);
       train1.draw(page);
       //car.draw(page);
-      raining.draw(page);
+      //raining.draw(page);
 
       //ground.draw(page);
 

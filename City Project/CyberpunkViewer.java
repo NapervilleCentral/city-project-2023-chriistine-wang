@@ -50,7 +50,7 @@ public class CyberpunkViewer
         frame.setVisible(true);
         
         // animate the cityscape
-        for( int seconds = 0; seconds < ANIMATION_TIME_IN_SECONDS; seconds++ )
+        while (true)
         {
             lineup.nextFrame(); //refreshes it
             //may need to adj to make city look better
