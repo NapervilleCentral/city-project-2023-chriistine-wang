@@ -57,7 +57,7 @@ public class foreground extends JComponent //implements Runnable
       
       Thread t1 = new Thread(train1);
       t1.start();
-      /**
+      
       Thread t2 = new Thread(tower1);
       t2.start();
       Thread t3 = new Thread(tower2);
@@ -77,12 +77,6 @@ public class foreground extends JComponent //implements Runnable
       
       Thread t10 = new Thread(raining);
       t10.start();
-      */
-      //setBackground (Color.black); //sets the color of background
-      //setSize (APPLET_WIDTH, APPLET_HEIGHT); //Sets up applet window
-
-      //figure2.draw(page);
-
 
    }
 
@@ -112,33 +106,9 @@ public class foreground extends JComponent //implements Runnable
       subway1.draw(page);
       lightStrip.draw(page);
       train1.draw(page);
-      //car.draw(page);
-      //raining.draw(page);
-
-      //ground.draw(page);
-
+      raining.draw(page);
       
-      
-      // second way to draw it
-      /*
-      int newHeight = HEIGHT_MIN + generator.nextInt(VARIANCE);
-      figure1.setHeight(newHeight);
-      newHeight = HEIGHT_MIN + generator.nextInt(VARIANCE);
-      figure2.setHeight(newHeight);
-      newHeight = HEIGHT_MIN + generator.nextInt(VARIANCE);
-      figure3.setHeight(newHeight);
-      newHeight = HEIGHT_MIN + generator.nextInt(VARIANCE);
-      figure4.setHeight(newHeight);
-      */
-      //try{
-          //pause program for quarter-sec (in miliseconds)
-          //Thread.sleep(250);
-        //}
-      //catch(InterruptedException e){}
 
-      //figure1.draw(page);
-
-      //repaint(); //IMPORTANT LINE
    }
 
    public void nextFrame()
