@@ -72,7 +72,7 @@ public class building extends JComponent implements Runnable
                 running += 50;
                 if (running % 2 == 0 && running > 500)
                 {
-                    lightColor = new Color(207, 229, 214);
+                    //lightColor = new Color(207, 229, 214);
                     lightColor = new Color(143, 216, 232);
                 }
                 else
