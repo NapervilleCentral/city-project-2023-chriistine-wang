@@ -31,6 +31,7 @@ public class rain extends JComponent implements Runnable
     public void run() {
 
     }
+    
     public void draw(Graphics2D page) {
         page.setColor(myColor);
         for (int i = 0; i < 1000; i += 60) {

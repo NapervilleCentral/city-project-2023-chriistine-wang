@@ -48,7 +48,7 @@ public class foreground extends JComponent implements Runnable
       subway1 = new subway();
       background = new sky();
       train1 = new train();
-      //raining = new rain(20, 0, 30, 60, new Color(242, 205, 245));
+      raining = new rain(20, 0, 30, 60, new Color(242, 205, 245));
       
       Thread t1 = new Thread(train1);
       t1.start();
@@ -109,6 +109,7 @@ public class foreground extends JComponent implements Runnable
    public void run() {
 
    }
+   
    public void nextFrame()
    {
        //other way to doit
