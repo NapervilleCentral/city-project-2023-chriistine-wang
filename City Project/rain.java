@@ -1,7 +1,6 @@
 
 import java.awt.*;
 import java.util.*;
-import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JComponent;
 
@@ -12,26 +11,27 @@ public class rain extends JComponent implements Runnable
     private Color lightColor = new Color(125, 81, 142);
     private int x1, x2, y1, y2, h1, h2;
     private final int VARIANCE = 50; // height diff between rain droplets
-    
-    Random generator = new Random();        
 
-    
+    Random generator = new Random();
+
+
     /**
-         * Constructor for objects of class building
-         * sets up building's primary attributes
-         */
-        public rain(int x1, int x2, int y1, int y2, Color userColor)
-        {
-            // initialise instance variables
-            myColor = userColor;
-            this.x1 = x1;
-            this.x2 = x2;
-            this.y1 = y1;
-            this.y2 = y2;
-        }
-    
-    public void draw(Graphics2D page) 
-    {
+     * Constructor for objects of class building
+     * sets up building's primary attributes
+     */
+    public rain(int x1, int x2, int y1, int y2, Color userColor) {
+        // initialise instance variables
+        myColor = userColor;
+        this.x1 = x1;
+        this.x2 = x2;
+        this.y1 = y1;
+        this.y2 = y2;
+    }
+
+    public void run() {
+
+    }
+    public void draw(Graphics2D page) {
         page.setColor(myColor);
         for (int i = 0; i < 1000; i += 60) {
             page.setColor(lightColor);
@@ -52,25 +52,4 @@ public class rain extends JComponent implements Runnable
             }
         }
     }
-
-            public void run()
-            {
-                /*
-                 * 
-                 *running = 0;
-                while (true) {
-                    running += 50;
-                    if (running % 2 == 0 && running > 500) {
-                        lightColor = new Color(207, 229, 214);
-                        lightColor = new Color(143, 216, 232);
-                    } else
-                        lightColor = Color.white;
-
-                    try {
-                        Thread.sleep(20);
-                    } catch (Exception e) {}
-                    System.out.println(myColor);
-                    running++;
-                    */
-                }
-            }
+}

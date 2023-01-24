@@ -10,7 +10,7 @@ import javax.swing.JComponent;
  * @version (a version number or a date)
  */
 // animation needs runnable
-public class subway extends JComponent implements Runnable
+public class subway extends JComponent
 {
     // instance variables - replace the example below with your own
     private int x,y,w,h, width, height;
@@ -48,24 +48,5 @@ public class subway extends JComponent implements Runnable
           page.setColor(myLight); 
           page.fillRect(x, y, width, height); //light strip on subway tunnel
        }
-       
-    public void run()
-    {
-        int running  = 0;
-    while(true){
-        
-        if(running % 2 == 0)
-            x +=20;
-        else
-            x -= 20;
-        running ++;
-            try{
-            Thread.sleep(17);
-        }catch (Exception e){}
-        
-        System.out.print(x+"-----------------");
-        //repaint();
-    }
-  
-    }
+
 }

@@ -4,11 +4,9 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JComponent;
 
-public class foreground extends JComponent //implements Runnable
+public class foreground extends JComponent implements Runnable
 {
    // sets stick figure dimensions
-   private final int HEIGHT_MIN = 275;
-   private final int VARIANCE = 25; // height and width diff between buildings
    Random generator = new Random();
    private Color gray = new Color(36, 36, 69);
    private Color lapis = new Color(57,95,166);
@@ -23,10 +21,7 @@ public class foreground extends JComponent //implements Runnable
    private sky background;
    private subway subway1, lightStrip;
    private train train1;
-   private vehicle car;
    private rain raining;
-   
-   private int running = 0;
 
    //-----------------------------------------------------------------
    //  Creates constructor for several stick figures with varying characteristics.
@@ -111,26 +106,16 @@ public class foreground extends JComponent //implements Runnable
 
    }
 
+   public void run() {
+
+   }
    public void nextFrame()
    {
        //other way to doit
-       
-       //figure1.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));
-       //figure2.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));
-       //figure3.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));
-       //figure4.setHeight(HEIGHT_MIN + generator.nextInt(VARIANCE));
-       //running ++;
-       //ground.setX(running);
-       //Thread t1 = new Thread(ground);
-       //t1.start();
 
-       repaint(); 
+       repaint();
        //refreshes it. gives it a new frame
 
    }
 
-   public void run()
-   {
-    
-   }
 }

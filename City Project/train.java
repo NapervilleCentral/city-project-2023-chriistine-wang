@@ -37,16 +37,9 @@ public class train implements Runnable
         catch (IOException e) {}
         
     }
-    public void draw (Graphics2D page)
-    {
+    public void draw (Graphics2D page) {
         page.drawImage(trainCar, x, y, null);
-        
-    }
 
-    public void nextFrame()
-    {
-        //x += 20;
-        //repaint();
     }
 
    
@@ -54,8 +47,6 @@ public class train implements Runnable
    {
        while(true)
        {
-            //int newX = 100 + generator.nextInt(45);
-            //x = newX;
             
             x += 10;
             if (x > 1300)
